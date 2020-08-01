@@ -7,24 +7,20 @@
 class Bread
 {
     std::string name;
-    int time_to_toasted;
+    long int secs_to_toasted;
 
 public:
-    Bread(std::string name) : name(name){};
+    Bread(std::string name, int secs_to_toasted) : name(name), secs_to_toasted(secs_to_toasted){};
     ~Bread() = default;
 
     std::string GetName()
     {
         return this->name;
     };
-    // compares the bread's toast_time with the bread's time_to_toasted, returns true if greater or equal, if not return false.
-    bool IsToasted(int toast_time)
+
+    int GetSecsToToasted()
     {
-        if (toast_time < time_to_toasted)
-        {
-            return false;
-        }
-        return true;
+        return this->secs_to_toasted;
     };
 };
 #endif // SRC_MAIN_BAKERY

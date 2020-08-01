@@ -13,10 +13,16 @@ public:
     Toaster(std::string name, int num_slot) : name(name), num_slot(num_slot){};
     ~Toaster() = default;
 
-    // toast a piece of bread
-    int ToastBread(Bread &bread)
+    // check if bread is toasted
+    int ToastBread(Bread &bread, long int &toast_time)
     {
-        std::cout << "Toasting bread: " << bread.GetName() << std::endl;
+        std::cout << "Toasting bread: " << bread.GetName() << " time now: " << toast_time << std::endl;
+
+        if (toast_time >= bread.GetSecsToToasted())
+        {
+            return 1;
+        }
+
         return 0;
     };
 };
