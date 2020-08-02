@@ -7,10 +7,10 @@
 class Bread
 {
     std::string name;
-    long int secs_to_toasted;
+    long int millisecs_to_toasted;
 
 public:
-    Bread(std::string name, int secs_to_toasted) : name(name), secs_to_toasted(secs_to_toasted){};
+    Bread(std::string name, int millisecs_to_toasted) : name(name), millisecs_to_toasted(millisecs_to_toasted){};
     ~Bread() = default;
 
     std::string GetName()
@@ -18,9 +18,9 @@ public:
         return this->name;
     };
 
-    int GetSecsToToasted()
+    int GetMillisecsToToasted()
     {
-        return this->secs_to_toasted;
+        return this->millisecs_to_toasted;
     };
 };
 #endif // SRC_MAIN_BAKERY

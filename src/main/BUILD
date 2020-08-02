@@ -4,6 +4,9 @@ cc_library(
     name = "toaster",
     # srcs = ["toaster.cc"],
     hdrs = ["toaster.h"],
+    # visibility = ["//visibility:public"],
+    visibility = ["//test:__pkg__"]
+
 )
 
 cc_library(
@@ -20,4 +23,5 @@ cc_binary(
         ":bakery",
         # "//lib:hello-time",
     ],
+    visibility = ["//visibility:public"],
 )
